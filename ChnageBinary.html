@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChangeBinary</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .input-section {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      width: 200px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    .btn {
+      background-color: #ff5c5c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff8585;
+    }
+
+    .result-section {
+      margin-top: 30px;
+    }
+
+    .result-section h3 {
+      margin-bottom: 5px;
+      font-size: 1.5rem;
+    }
+
+    .result-section p {
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ff5c5c;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ff8585;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Change Binary</h1>
+    <p>Enter a number to convert it to binary and see its Result:</p>
+    
+    <div class="input-section">
+      <input type="number" id="numberInput" placeholder="Enter a number" />
+      <button class="btn" onclick="convertToBinary()">Convert</button>
+    </div>
+    
+    <div class="result-section">
+      <h3>Binary Result:</h3>
+      <p id="binaryResult">-</p>
+      
+    </div>
+  </div>
+
+  <footer>
+    <p>Developed with ❤️ by <b><a href="https://linktr.ee/manash.djmm" target="_blank" style="text-decoration: none;">Manash</a></b> | ChangeBinary |</p>
+  </footer>
+
+  <script>
+    function convertToBinary() {
+      const input = document.getElementById("numberInput").value;
+      const binaryResult = document.getElementById("binaryResult");
+      const asciiResult = document.getElementById("asciiResult");
+
+      if (input === "") {
+        alert("Please enter a number!");
+        return;
+      }
+
+      // Convert the number to binary
+      const binary = parseInt(input).toString(2);
+      binaryResult.textContent = binary;
+
+      
+    }
+  </script>
+</body>
+</html>
